@@ -90,10 +90,10 @@ const Header = () => {
 
       {/* Drawer para el carrito */}
       <Drawer anchor="right" open={isCartOpen} onClose={toggleCart}>
-        <Cart closeCart={toggleCart} />
+        <Cart closeCart={toggleCart} /> 
       </Drawer>
     </>
   );
 };
-
+// En Cart queremos usar el contexto
 export default Header;

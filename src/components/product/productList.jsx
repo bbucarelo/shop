@@ -28,5 +28,5 @@ const ProductsList = () => {
     </Container>
   );
 };
-
+// En productCard tambien queremos usar el contexto
 export default ProductsList;

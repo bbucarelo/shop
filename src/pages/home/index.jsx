@@ -10,3 +10,6 @@ export const Home = () => {
     </Layout>
   );
 };
+
+
+//! ¿Qué hago aquí?

@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 // components/ProductCard.jsx
 
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/cartContext";
 import {
   Card,
   CardContent,
@@ -12,9 +13,13 @@ import {
   CardActionArea,
 } from "@mui/material";
 
+//Añadir botón al final 
 // Componente para renderizar la tarjeta del producto
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }) => {// aqui queremos modificar y en el cart queremos añadir 
+  const { addProduct } = useContext(CartContext);  
+  //traerme el contexto y coger el addProduct del contexto y si tuviese la funcion de eliminar, también y en cart solo debo traerme el estado 
   return (
+
     <Card
       sx={{
         maxWidth: 345,
@@ -55,6 +60,9 @@ const ProductCard = ({ product }) => {
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
         {/* Botón para añadir al carrito */}
       </CardActions>
+        <Button variant="contained" href="#contained-buttons" onClick={() => addProduct(product)}>
+          AÑADIR AL CARRITO
+        </Button>
     </Card>
   );
 };
