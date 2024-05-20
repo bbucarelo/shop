@@ -12,12 +12,15 @@ import {
   Button,
   CardActionArea,
 } from "@mui/material";
-
-//Añadir botón al final 
+ 
 // Componente para renderizar la tarjeta del producto
 const ProductCard = ({ product }) => {// aqui queremos modificar y en el cart queremos añadir 
-  const { addProduct } = useContext(CartContext);  
+  const { dispatch } = useContext(CartContext);  //disparando las acciones
   //traerme el contexto y coger el addProduct del contexto y si tuviese la funcion de eliminar, también y en cart solo debo traerme el estado 
+
+  const addToProduct = () => 
+    dispatch({type: "add", payload: product}); 
+  
   return (
 
     <Card
@@ -60,7 +63,8 @@ const ProductCard = ({ product }) => {// aqui queremos modificar y en el cart qu
       <CardActions disableSpacing sx={{ justifyContent: "flex-end" }}>
         {/* Botón para añadir al carrito */}
       </CardActions>
-        <Button variant="contained" href="#contained-buttons" onClick={() => addProduct(product)}>
+      {/* Actualizamos el componente */}
+        <Button variant="contained"  onClick={addToProduct}>
           AÑADIR AL CARRITO
         </Button>
     </Card>

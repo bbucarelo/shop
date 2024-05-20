@@ -22,3 +22,5 @@ export const BaseTheme = createTheme({
     },
   },
 });
+
+//Base que se le quiere dar al proyecto, relacionado con el theme 

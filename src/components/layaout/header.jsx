@@ -95,5 +95,5 @@ const Header = () => {
     </>
   );
 };
-// En Cart queremos usar el contexto
+
 export default Header;

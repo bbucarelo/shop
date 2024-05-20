@@ -11,5 +11,3 @@ export const Home = () => {
   );
 };
 
-
-//! ¿Qué hago aquí?
